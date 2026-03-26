@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Suplexmentary Comic NC';
+    src: url('../fonts/SuplexmentaryComicNC.eot');
+    src: url('../fonts/SuplexmentaryComicNC.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SuplexmentaryComicNC.woff2') format('woff2'),
+        url('../fonts/SuplexmentaryComicNC.woff') format('woff'),
+        url('../fonts/SuplexmentaryComicNC.svg#SuplexmentaryComicNC') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

@@ -1,0 +1,13 @@
+:root {
+    --pink-color: #ff009f;
+    --light-green-color: #3dff94;
+    --blue-color: #0749ff;
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+    --yellow-color: #FFED0D;
+}
+html.body {
+    font-family: ;
+    color: var(--basic-text-color)
+    background-color: linear-gradient(to down, blue, white);
+}

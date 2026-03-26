@@ -1,0 +1,48 @@
+:root {
+    --button-headline-text-color: #ffffff;
+    --basic-text-color: #000000;
+    --bg-color: #0749ff;
+    --mob-padding: 20px;
+    --ipad-padding: 50px;
+    --max-width: 1380px;
+    --ver-desk-pad: 50px;
+    --ver-mob-pad: 25px; 
+}
+
+html, body {
+    font-family: 'Suplexmentary Comic NC';
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+    line-height: 1.6;
+    color: var(--txt-color-01)
+}
+
+p{
+    margin-bottom: 1em;
+}
+
+header, 
+section 
+footer {
+    padding-bottom: var(--vert-desk-pad);
+    padding-top: var(--vert-desk-pad);
+}
+
+.inside {
+    max-width: var(--max-width);
+    margin-left: auto;  /* Центрування */
+    margin-right: auto; /* по горизонталі */
+    padding-left: var(--ipad-padding);
+    padding-right: var(--ipad-padding);
+}
+
+@media screen and (max-width:680px) {
+
+    .inside {
+    padding-left: var(--mob-padding);
+    padding-right: var(--mob-padding);
+}
+
+}

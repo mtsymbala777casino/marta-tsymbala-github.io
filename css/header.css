@@ -1,0 +1,14 @@
+header .row {
+    display: flex;
+    justify-content: space-between; /* вирівнювання по основній осі(main axis) */
+    align-items: center;            /* вирівнювання елементів по ортог. (cross axis) */
+    align-content: center;          /* вирівнювання рядів елементів по ортог. осі */
+    flex-direction: row;            /* напрям головної осі */
+    min-height: 100dvh;             /* dvh- Dynamic Viewport Height */
+    flex-wrap: wrap;                /* в новий рядочок як опшин зет з текстом */
+    /* flex-wrap: wrap; */
+}
+
+header .row .c2 {
+    
+}
