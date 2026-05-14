@@ -7,7 +7,241 @@
     --yellow-color: #FFED0D;
 }
 html.body {
-    font-family: ;
     color: var(--basic-text-color)
-    background-color: linear-gradient(to down, blue, white);
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(360deg, #fff 0.29%, #b9c7e7 19.23%, #7592d1 38.87%, #0339ae 62.58%, #011848 100%);
+}
+.title {
+font-weight: 400;
+font-size: 40px;
+line-height: 125%;
+color: #ffffff;
+}
+.accent1 {
+  color: #FFED0D;
+}
+.accent2 {
+  color: #ff009f;
+}
+.accent3 {
+  color: #3dff94;
+}
+#s1 {
+    width: 100%;
+    overflow: hidden; 
+    min-height: 100vh;
+}
+
+/* Контейнер всередині секції */
+.inside {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 40px; 
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+/* Верхній блок (Бос + Cry) */
+.top-row {
+    display: block; 
+    width: 100%;
+    position: relative; 
+    margin-bottom: 20px;
+    bottom: 1%;
+}
+
+.boss {
+    display: block;
+    width: 83%; 
+    max-width: 100%; 
+    height: auto;
+    object-fit: contain;
+    left: 8%;
+    bottom: 5%;
+}
+
+.cry {
+    position: absolute; 
+    top: 0;
+    right: 0; 
+    width: 400px; 
+    max-width: 30vw; 
+    height: auto;
+    pointer-events: none; 
+    z-index: 2;
+}
+
+/* Текст під босом */
+.frame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    width: 100%;
+    margin-top: -88px; 
+    padding-right: 5%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+}
+
+.title {
+    max-width: 600px; 
+    color: white; 
+    font-size: 1.05rem; 
+    line-height: 1.2;
+    text-align: right; 
+    margin: 0;
+}
+
+/* АДАПТИВНІСТЬ */
+@media (max-width: 850px) {
+    .frame {
+        margin-top: 20px; /* Текст виходить з-під боса і не перекривається */
+        align-items: center; 
+        padding-right: 0;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .top-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cry {
+        position: static; 
+        max-width: 60%;
+        margin: 20px auto;
+        pointer-events: auto;
+    }
+}
+#s2 {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.inside-s2 {
+    display: flex;
+    flex-direction: column; 
+    width: 100%;
+}
+
+.kiss {
+    width: 400px; 
+    max-width: 35vw; 
+    height: auto;
+    position: relative;
+    z-index: 11; /* Поцілунок нижче за кота */
+}
+.catGIF {
+    /* Робимо його великим, як ти і хотіла */
+    width: 100%; 
+    max-width: 85vw; 
+    height: auto;
+
+    /* ПІДЙОМ: */
+    position: absolute; /* Вириваємо його з черги, щоб він літав */
+    left: 0%;          /* вправо/вліво відносно kiss */
+    top: -20px;         /* ВІД’ЄМНЕ значення піднімає картинку ВГОРУ */
+    
+    z-index: 15;        /* Щоб він точно був над поцілунком і підкладкою */
+    pointer-events: none;
+}
+.textBackground {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    /* Підкладка на самому нижньому рівні */
+    z-index: 1; 
+    margin-top: 0; 
+}
+@media (max-width: 768px) {
+    /* Робимо так, щоб кіт не налізав на текст на вузьких екранах */
+    .catGIF {
+        position: relative; /* Повертаємо його в загальний потік */
+        top: 0;             /* Скидаємо від'ємний відступ */
+        left: 0;            /* Вирівнюємо по лівому краю або центру */
+        width: 100%;        /* Щоб він вписався в ширину екрана */
+        margin-top: 20px;   /* Додаємо невеликий відступ від тексту зверху */
+    }
+
+    .animation-container {
+        display: flex;
+        flex-direction: column; /* Вишиковуємо поцілунок і кота один під одним */
+        align-items: center;    /* Центруємо їх на мобілці */
+        padding: 20px;          /* Зменшуємо величезні відступи */
+    }
+    
+    .kiss {
+        max-width: 60%;         /* Трохи зменшуємо поцілунок на телефоні */
+        position: relative;
+    }
+}
+/* ГОЛОВНИЙ КОНТЕЙНЕР (не міняй його, якщо він тримає підкладку) */
+.content-wrapper {
+    position: relative; /* Це "якір" для всіх наклейок */
+    width: 100%;
+}
+
+
+/* Спільні налаштування для всіх фотографій-елементів */
+.content-wrapper img:not(.textBackground) {
+    position: absolute; /* Вириваємо з потоку, щоб вони "літали" над підкладкою */
+    z-index: 10;        /* Ставимо вище підкладки */
+    height: auto;
+}
+
+/* --- РОЗСТАНОВКА ЗГІДНО З РЕФЕРЕНСОМ --- */
+
+/* Плакса справа вгорі */
+.cry2 {
+    width: 35%;
+    top: 5%;      /* Висота від початку підкладки */
+    right: 5%;    /* Відступ справа */
+}
+
+/* Сумка справа під ним */
+.bag {
+    width: 55%;
+    top: 19%;
+    right: -5%;
+}
+
+/* Колаж фотографій (стіна) зліва */
+.wall {
+    width: 45%;
+    top: 39%;
+    left: 4%;
+}
+
+/* Значки (pins) - десь біля другого бабла */
+.pins {
+    width: 30%;
+    top: 36%;
+    left: 30%;
+}
+
+/* Фігурки Funko Pop зліва знизу */
+.funko {
+    width: 40%;
+    bottom: 17%;
+    left: 3%;
+}
+
+/* Обіймашки (hug) в самому низу */
+.hug {
+    width: 37%;
+    bottom: 1%;
+    left: 2%;
 }

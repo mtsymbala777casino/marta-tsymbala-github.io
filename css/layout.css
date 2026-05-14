@@ -6,7 +6,10 @@
     --ipad-padding: 50px;
     --max-width: 1380px;
     --ver-desk-pad: 50px;
-    --ver-mob-pad: 25px; 
+    --ver-mob-pad: 25px;
+    --bg-nav-1: transparent;
+    --nav-color-1: #ff009f;
+    --nav-color-2: #3dff94;
 }
 
 html, body {
@@ -15,7 +18,7 @@ html, body {
     font-weight: 400;
     font-style: normal;
     font-size: 40px;
-    line-height: 1.6;
+    line-height: 2;
     color: var(--txt-color-01)
 }
 
@@ -44,5 +47,18 @@ footer {
     padding-left: var(--mob-padding);
     padding-right: var(--mob-padding);
 }
-
+body {
+    background-color: linear-gradient(360deg, #fff 0.29%, #b9c7e7 19.23%, #7592d1 38.87%, #0339ae 62.58%, #011848 100%);
+}
+.boss {
+  width: 1164.48px;
+  height: 833.561px;
+  top: 75px;
+  display: flex;
+}
+.cry {
+  width: ;
+  height: 833.561px;
+  top: 100%;
+  display: flex;
 }

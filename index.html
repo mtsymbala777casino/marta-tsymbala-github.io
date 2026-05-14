@@ -7,30 +7,68 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/burger.css">
     <link rel="stylesheet" href="css/header.css">
 </head>
 <body id="top">
-    <header>
-        <div class="inside">
-            <div class="row">
-                <div class="col">1 element</div>
-                <div class="col">2 element</div>
-                <div class="col">3 element</div>
-            </div>
-
-        </div>
-    </header>
+     <!-- Navigation section -->
+    <nav>
+        <div class="navbar">
+           <div class="navigation">
+                <button class="nav-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="level_1">
+                    <li><a class="nav-link" href="#top">Main</a></li>
+                    <li><a class="nav-link" href="#top">About us</a></li>
+                    <li><a class="nav-link" href="#s1">Join us</a></li>
+                    <li><a class="nav-link" href="#s2">Find us</a></li>
+                </ul>
+           </div>
+       </div>
+    </nav>
+    <!-- END of Navigation section -->
     <section id="s1">
-        <div class="inside">
-
+    <div class="inside">
+        <!-- Обгортка для верхньої частини -->
+        <div class="top-row">
+            <img src="img/BOSS.png" class="boss">
+            <img src="img/cry.png" class="cry">
         </div>
-    </section>
-    <section id="s2">
-        <div class="inside">
 
+        <div class="bottom-row">
+             <div class="frame">
+                <h1 class="title"><span class="accent1">а</span><span class="accent2">б</span><span class="accent3">о</span> комфортік плейс для ну дуже крутяцьких людинок <span class="accent2">:D</span></h1>
+             </div>
         </div>
-    </section>
-    <section is="s3">
+    </div>
+</section>
+   <section id="s2">
+    <div class="inside-s2">
+        <div class="animation-overlay">
+            <img src="img/kiss.png" class="kiss">
+            <img src="img/nyan-cat.gif" class="catGIF">
+        </div>
+        <div class="content-wrapper">
+        <!-- КОНТЕЙНЕР ПІДКЛАДКИ І ВСІХ ЕЛЕМЕНТІВ У НІЙ -->
+        <img src="img/cry2.png" class="cry2">
+        <img src="img/підкладки під текст.png" class="textBackground">
+        <img src="img/сумка.png" class="bag">
+        <img src="img/значки.png" class="pins">
+        <img src="img/стіна.png" class="wall">
+        <img src="img/cry2.png" class="cry2">
+        <img src="img/фанко.png" class="funko">
+        <img src="img/hug.png" class="hug">
+        
+        <!-- Тут десь будуть твої тексти поверх баблів -->
+         </div>
+    </div>
+</section>
+    <section id="s3">
         <div class="inside">
 
         </div>
@@ -45,6 +83,9 @@
 
         </div>
     </footer>
-    
+    <!-- Scripts in project -->
+    <script src="js/nav.js"></script>
+
+    <!-- End of Scripts in project -->
 </body>
 </html>
