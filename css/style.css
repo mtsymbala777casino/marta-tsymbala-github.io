@@ -211,7 +211,7 @@ color: #ffffff;
     right: 5%;    /* Відступ справа */
 }
 
-/* Сумка справа під ним */
+/* Сумка справа */
 .bag {
     width: 55%;
     top: 19%;
@@ -244,4 +244,9 @@ color: #ffffff;
     width: 37%;
     bottom: 1%;
     left: 2%;
+}
+.text1 {
+    width: 20%;
+    top: 5%;    
+    right: 50%;
 }

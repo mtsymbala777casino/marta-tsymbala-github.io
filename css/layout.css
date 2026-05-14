@@ -47,6 +47,7 @@ footer {
     padding-left: var(--mob-padding);
     padding-right: var(--mob-padding);
 }
+
 body {
     background-color: linear-gradient(360deg, #fff 0.29%, #b9c7e7 19.23%, #7592d1 38.87%, #0339ae 62.58%, #011848 100%);
 }
