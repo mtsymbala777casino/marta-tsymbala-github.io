@@ -356,13 +356,11 @@ color: #ffffff;
         margin-bottom: 0;          /* Прибираємо підйом на мобілці */
     }
 }
-/* --- СЕКЦІЯ 4 (ОНОВЛЕНО: ГІГАНТСЬКІ МЕЖІ) --- */
-/* --- СЕКЦІЯ 4 --- */
 .section-four {
     position: relative;
     width: 100%;
-    /* ⚠️ Я ВИДАЛИВ MIN-HEIGHT 400VH. ТЕПЕР СЕКЦІЯ ОБЛЯГАЄ МОЛЬБЕРТ */
-    overflow: visible; 
+    /* Змінив visible на hidden, щоб гігантський мольберт не розпирав екран по боках */
+    overflow: hidden !important; 
     display: flex;
     justify-content: center; 
     align-items: flex-start; 
@@ -375,7 +373,7 @@ color: #ffffff;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Повертаємо 100%, тепер вони не вилізуть за межі секції */
+    height: 100%;
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
@@ -389,24 +387,25 @@ color: #ffffff;
     width: auto;   
     max-height: none !important; 
     margin-top: 14vh !important; 
-    
-    /* ⚠️ МАГІЯ ДЛЯ СТИКУ З ФУТЕРОМ: */
     display: block !important; 
-    margin-bottom: -5px !important; /* Натягуємо мольберт на футер, щоб не було мікро-лінії */
+    
+    /* 🎛️ КРУТИ ЦЮ ЦИФРУ 1: Відступ знизу. 
+       Даємо місце, щоб футер мав куди налізти. Спробуй 200px, 300px тощо */
+    margin-bottom: 120px !important; 
 }
+
 /* --- КОНТЕЙНЕР ФУТЕРА (Біла смуга знизу) --- */
 .site-footer {
     position: relative !important;
     width: 100% !important;
     background-color: white !important; 
-    
-    
-    /* ⚠️ МАГІЯ ТУТ: Я додав 40px зверху і знизу. 
-       Це "заблокує" білий фон на місці, і він не поповзе на мольберт! */
     padding: 40px 5% 40px 5% !important; 
-    
     z-index: 999 !important; 
     overflow: visible !important; 
+    
+    /* 🎛️ КРУТИ ЦЮ ЦИФРУ 2: Натягуємо футер на мольберт.
+       Якщо біла лінія занизько - став -250px або -300px. Якщо зависоко - став -100px */
+    margin-top: -150px !important; 
 }
 
 /* --- КОНТЕНТ (З ефектом накладання на шахівницю) --- */
@@ -416,32 +415,37 @@ color: #ffffff;
     align-items: flex-end !important; 
     position: relative !important;
     
-    /* Витягуємо пантеру і кнопки ВГОРУ на шахівницю */
-    margin-top: -250px !important; 
+    /* 🎛️ КРУТИ ЦЮ ЦИФРУ 3: Наскільки високо пантера та кнопки вилазять з білої смуги. */
+    margin-top: -62px !important; 
     z-index: 10 !important; 
 }
 
 /* --- ВЕЛИЧЕЗНА ПАНТЕРА (ЗЛІВА) --- */
 .pantera-footer-large {
-    /* ⚠️ Я ЗБІЛЬШИВ ЇЇ до 650px (було 500). Якщо забагато - зменш до 600 */
-    width: 650px !important; 
+    width: 780px !important; 
     height: auto !important;
     display: block !important;
     position: relative !important;
-    bottom: -1px !important; 
+    bottom: -40px !important; 
 }
 
 /* --- ІНФО (СПРАВА) --- */
 .footer-info-img {
-    width: 300px !important; /* Розмір кнопок (міняй під себе) */
-    height: auto !important;
+    /* 1. Твоя нова ширина (крути її, якщо треба ще більше) */
+    width: 450px !important; 
     
-    /* Піднімаємо кнопки трохи вище, щоб вони не стояли на підлозі */
+    /* 2. ВБИВАЄМО ЗАПОБІЖНИК, який не давав їй рости */
+    max-width: none !important; 
+    
+    /* 3. ЗАБОРОНЯЄМО Flexbox'у стискати цю картинку */
+    flex-shrink: 0 !important; 
+    
+    height: auto !important;
     margin-bottom: 50px !important; 
-    transition: transform 0.2s ease !important;
+    transition: transform 0.3s ease-in-out !important;
 }
-
-/* При наведенні кнопки трохи збільшуються */
-.info-link-wrapper:hover .footer-info-img {
-    transform: scale(1.05) !important;
+.footer-info-img:hover {
+    /* Збільшуємо на 8%. Якщо хочеш сильніше - став scale(1.1) або scale(1.15) */
+    transform: scale(1.08) !important; 
+    cursor: pointer; /* На всякий випадок, щоб курсор точно ставав "пальцем" */
 }
