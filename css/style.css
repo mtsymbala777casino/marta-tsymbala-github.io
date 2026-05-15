@@ -6,9 +6,13 @@
     --white-color: #FFFFFF;
     --yellow-color: #FFED0D;
 }
+html, body {
+    overflow-x: hidden !important;
+}
 html.body {
     color: var(--basic-text-color)
 }
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -353,46 +357,91 @@ color: #ffffff;
     }
 }
 /* --- СЕКЦІЯ 4 (ОНОВЛЕНО: ГІГАНТСЬКІ МЕЖІ) --- */
+/* --- СЕКЦІЯ 4 --- */
 .section-four {
     position: relative;
     width: 100%;
-    
-    /* 1. ПОДВОЮЄМО ВИСОТУ СЕКЦІЇ (4 екрани) */
-    min-height: 400vh !important; 
-    
-    overflow: visible; /* Дозволяє скролити цей гігантський об'єкт */
+    /* ⚠️ Я ВИДАЛИВ MIN-HEIGHT 400VH. ТЕПЕР СЕКЦІЯ ОБЛЯГАЄ МОЛЬБЕРТ */
+    overflow: visible; 
     display: flex;
-    justify-content: center; /* Центруємо по горизонталі */
-    align-items: flex-start; /* Мольберт починається зверху секції */
+    justify-content: center; 
+    align-items: flex-start; 
     z-index: 10;
 }
 
 /* --- ЗІРКИ (ФОН) --- */
 .stars-bg {
     position: absolute;
-    top: 10%;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 60%; /* Розтягуємо зірки на всі 400vh */
+    height: 100%; /* Повертаємо 100%, тепер вони не вилізуть за межі секції */
     object-fit: cover;
     z-index: -1;
     pointer-events: none;
 }
 
-/* --- МОЛЬБЕРТ (ОНОВЛЕНО: ПОДВОЄНИЙ ГІГАНТ) --- */
+/* --- МОЛЬБЕРТ --- */
 .molbert-img {
     position: relative;
-    z-index: 2; /* Вище зірок */
-    
-    /* 2. ЗБІЛЬШУЄМО ЙОГО ВДВІЧІ (3.2 екрани заввишки) */
+    z-index: 2; 
     height: 320vh !important; 
-    width: auto;   /* SVG буде пропорційно розширюватися по ширині */
+    width: auto;   
+    max-height: none !important; 
+    margin-top: 14vh !important; 
     
-    max-height: none !important; /* Прибираємо будь-які ліміти */
-    
-    /* Додаємо масивний відступ зверху, щобCanvas (полотно) було по центру */
-    margin-top: 14vh !important; /* Щоб він не впирався в попередню секцію */
+    /* ⚠️ МАГІЯ ДЛЯ СТИКУ З ФУТЕРОМ: */
+    display: block !important; 
+    margin-bottom: -5px !important; /* Натягуємо мольберт на футер, щоб не було мікро-лінії */
 }
+/* --- КОНТЕЙНЕР ФУТЕРА (Біла смуга знизу) --- */
 .site-footer {
-    background-color: #ffffff;
+    position: relative !important;
+    width: 100% !important;
+    background-color: white !important; 
+    
+    
+    /* ⚠️ МАГІЯ ТУТ: Я додав 40px зверху і знизу. 
+       Це "заблокує" білий фон на місці, і він не поповзе на мольберт! */
+    padding: 40px 5% 40px 5% !important; 
+    
+    z-index: 999 !important; 
+    overflow: visible !important; 
+}
+
+/* --- КОНТЕНТ (З ефектом накладання на шахівницю) --- */
+.footer-overlay-content {
+    display: flex !important;
+    justify-content: space-between !important; 
+    align-items: flex-end !important; 
+    position: relative !important;
+    
+    /* Витягуємо пантеру і кнопки ВГОРУ на шахівницю */
+    margin-top: -250px !important; 
+    z-index: 10 !important; 
+}
+
+/* --- ВЕЛИЧЕЗНА ПАНТЕРА (ЗЛІВА) --- */
+.pantera-footer-large {
+    /* ⚠️ Я ЗБІЛЬШИВ ЇЇ до 650px (було 500). Якщо забагато - зменш до 600 */
+    width: 650px !important; 
+    height: auto !important;
+    display: block !important;
+    position: relative !important;
+    bottom: -1px !important; 
+}
+
+/* --- ІНФО (СПРАВА) --- */
+.footer-info-img {
+    width: 300px !important; /* Розмір кнопок (міняй під себе) */
+    height: auto !important;
+    
+    /* Піднімаємо кнопки трохи вище, щоб вони не стояли на підлозі */
+    margin-bottom: 50px !important; 
+    transition: transform 0.2s ease !important;
+}
+
+/* При наведенні кнопки трохи збільшуються */
+.info-link-wrapper:hover .footer-info-img {
+    transform: scale(1.05) !important;
 }
