@@ -241,12 +241,87 @@ color: #ffffff;
 
 /* Обіймашки (hug) в самому низу */
 .hug {
-    width: 37%;
-    bottom: 1%;
+    width: 38%;
+    bottom: 5%;
     left: 2%;
 }
-.text1 {
-    width: 20%;
-    top: 5%;    
-    right: 50%;
+.text2 {
+    width: 40%;
+    bottom: 2%;
+    left: 32%;
+}
+/* --- ОСНОВНИЙ СТАН (Enabled) --- */
+.boss-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Розміри та відступи */
+    padding: 15px 40px;
+    min-width: 300px;
+    border-radius: 80px; /* Овальна форма */
+    margin-top: 10px;
+    
+    /* Кольори з Figma */
+    background-color: #ff009f; 
+    border: 3px solid #3dff94; /* обводка */
+    
+    /* Текст */
+    color: #ffffff;
+    font-family: 'Suplexmentary Comic NC';
+    font-weight: 700;
+    font-size: 55px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    
+    /* Анімація переходу */
+    transition: all 0.7s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    gap: 10px;
+}
+
+/* Іконка лапки */
+.paw-icon {
+    width: 80px;
+    height: auto;
+    display: none;
+}
+
+/* --- СТАН НАВЕДЕННЯ (Hovered) --- */
+.boss-button:hover {
+    background-color: #c90b79; /* Трохи темніший рожевий */
+    transform: translateY(-4px); /* Легкий підйом вгору */
+    box-shadow: 0 5px 30px rgb(62, 255, 126);
+}
+
+.boss-button:hover .paw-icon {
+    display: block; /* Лапка з'являється зліва */
+}
+
+/* --- СТАН НАТИСКАННЯ (Pressed) --- */
+.boss-button:active {
+    background-color: #00ffaa !important; /* Зелений колір з Figma */
+    border-color: #ff0095 !important;
+    color: #ffffff !important;
+    transform: scale(1); /* Ефект натискання (трохи менша) */
+}
+
+}
+
+/* Міняємо текст при натисканні (опціонально через JS, або просто стилі) */
+.boss-button:active .button-text::before {
+
+}
+
+/* --- СТАН FOCUS (для таба) --- */
+.boss-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 195, 255, 0.5);
+}
+.voteText {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
