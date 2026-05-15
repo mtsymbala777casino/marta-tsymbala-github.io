@@ -1,3 +1,16 @@
+window.addEventListener('scroll', function() {
+    const btn = document.getElementById("backToTop");
+    if (window.scrollY > 400) {
+        btn.style.opacity = "1";
+        btn.style.visibility = "visible";
+        btn.style.transform = "translateY(0)";
+    } else {
+        btn.style.opacity = "0";
+        btn.style.visibility = "hidden";
+        btn.style.transform = "translateY(20px)";
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function(){
     
     let burger = document.querySelector(".nav-icon");
@@ -70,4 +83,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
     /* Зміна класу для <nav> по скролу вгору */
 });
-
+/* --- СКРИПТ ДЛЯ ПОЯВИ ЛАПКИ-ТЕЛЕПОРТА --- */
+window.onscroll = function() {
+    const backToTop = document.getElementById("backToTop");
+    
+    // Перевіряємо, чи ми прокрутили сторінку вниз на 400 пікселів
+    if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
+};

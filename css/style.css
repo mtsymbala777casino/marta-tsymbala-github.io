@@ -441,7 +441,8 @@ color: #ffffff;
     flex-shrink: 0 !important; 
     
     height: auto !important;
-    margin-bottom: 50px !important; 
+    margin-bottom: 145px !important; 
+    margin-right: -25px;
     transition: transform 0.3s ease-in-out !important;
 }
 .footer-info-img:hover {
@@ -449,3 +450,65 @@ color: #ffffff;
     transform: scale(1.08) !important; 
     cursor: pointer; /* На всякий випадок, щоб курсор точно ставав "пальцем" */
 }
+/* --- КНОПКА ЛАПКА (ФІКСОВАНА) --- */
+.back-to-top {
+    /* ⚠️ ГОЛОВНИЙ СЕКРЕТ: fixed приклеює її до екрана, а не до сайту */
+    position: fixed !important; 
+    
+    /* Координати: 30px від правого нижнього кута */
+    bottom: 40px !important;
+    right: 40px !important;
+    
+    /* Розміри кола навколо лапки */
+    width: 80px !important;
+    height: 80px !important;
+    
+    /* Робимо її рожевою і круглою */
+    background-color: #ff007f !important; 
+    border-radius: 50% !important;
+    
+    /* Центруємо лапку всередині кола */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    
+    /* Щоб вона була поверх футера, пантери і всього іншого */
+    z-index: 10000 !important; 
+    
+    /* Плавна поява */
+    transition: all 0.5s ease !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
+    
+    /* Початковий стан (невидима), JS її включить */
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Стиль самої картинки-лапки всередині */
+.back-to-top img {
+    width: 45px !important;
+    height: auto !important;
+    /* Якщо хочеш, щоб лапка дивилася вгору, розкоментуй це: */
+    /* transform: rotate(-90deg); */
+}
+
+/* Коли JS додає цей клас — вона проявляється */
+.back-to-top.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+.back-to-top:hover {
+    /* 1. Збільшення всієї кнопки на 15% */
+    transform: scale(1.15) !important;
+    
+    /* 2. Рожеве світіння (box-shadow) */
+    /* Перша цифра - розмиття, друга - наскільки далеко розходиться світло */
+    box-shadow: 0 0 20px 5px rgba(0, 255, 162, 0.828) !important;
+    
+    /* Можна трохи освітлити фон при наведенні */
+    background-color: #d21a6d !important;
+}
+
+/* Анімація для самої картинки всередині, щоб вона теж трохи рухалась */
+.back-to-top:hover img {
+    transform: scale(1.1);
