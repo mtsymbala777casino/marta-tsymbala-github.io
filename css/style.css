@@ -260,7 +260,7 @@ color: #ffffff;
     padding: 15px 40px;
     min-width: 300px;
     border-radius: 80px; /* Овальна форма */
-    margin-top: 10px;
+    margin-top: 0px;
     
     /* Кольори з Figma */
     background-color: #ff009f; 
@@ -276,7 +276,7 @@ color: #ffffff;
     letter-spacing: 0.5px;
     
     /* Анімація переходу */
-    transition: all 0.7s ease-in-out;
+    transition: all 0.5s ease-in-out;
     cursor: pointer;
     position: relative;
     gap: 10px;
@@ -319,4 +319,80 @@ color: #ffffff;
 .boss-button:focus {
     outline: none;
     box-shadow: 0 0 0 4px rgba(0, 195, 255, 0.5);
+}
+.footer-section {
+    display: flex;
+    justify-content: space-between; /* Пантера вліво, кнопки вправо */
+    align-items: flex-end;         /* Притискаємо до нижнього краю */
+    padding: 20px 5%;              /* Відступи від країв екрана */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;            /* На всякий випадок */
+}
+
+.pantera-img {
+    max-width: 350px;              /* Регулюй розмір пантери тут */
+    height: auto;
+}
+
+.footer-info-img {
+    max-width: 300px;              /* Регулюй розмір кнопок тут */
+    height: auto;
+    margin-bottom: 40px;           /* Піднімаємо кнопки трохи вище, щоб було як на скріні */
+}
+
+/* Адаптивність: щоб на телефонах вони не злипалися */
+@media (max-width: 768px) {
+    .footer-section {
+        flex-direction: column;    /* На мобілці ставимо їх один під одного */
+        align-items: center;
+        gap: 20px;
+    }
+    .footer-info-img {
+        margin-bottom: 0;          /* Прибираємо підйом на мобілці */
+    }
+}
+/* --- СЕКЦІЯ 4 (ОНОВЛЕНО: ГІГАНТСЬКІ МЕЖІ) --- */
+.section-four {
+    position: relative;
+    width: 100%;
+    
+    /* 1. ПОДВОЮЄМО ВИСОТУ СЕКЦІЇ (4 екрани) */
+    min-height: 400vh !important; 
+    
+    overflow: visible; /* Дозволяє скролити цей гігантський об'єкт */
+    display: flex;
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: flex-start; /* Мольберт починається зверху секції */
+    z-index: 10;
+}
+
+/* --- ЗІРКИ (ФОН) --- */
+.stars-bg {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Розтягуємо зірки на всі 400vh */
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- МОЛЬБЕРТ (ОНОВЛЕНО: ПОДВОЄНИЙ ГІГАНТ) --- */
+.molbert-img {
+    position: relative;
+    z-index: 2; /* Вище зірок */
+    
+    /* 2. ЗБІЛЬШУЄМО ЙОГО ВДВІЧІ (3.2 екрани заввишки) */
+    height: 320vh !important; 
+    width: auto;   /* SVG буде пропорційно розширюватися по ширині */
+    
+    max-height: none !important; /* Прибираємо будь-які ліміти */
+    
+    /* Додаємо масивний відступ зверху, щобCanvas (полотно) було по центру */
+    margin-top: 14vh !important; /* Щоб він не впирався в попередню секцію */
+}
+.site-footer {
+    background-color: #ffffff;
 }
