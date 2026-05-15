@@ -320,8 +320,3 @@ color: #ffffff;
     outline: none;
     box-shadow: 0 0 0 4px rgba(0, 195, 255, 0.5);
 }
-.voteText {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
